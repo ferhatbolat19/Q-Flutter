@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
+import 'core/routes.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main() => runApp(JobPlatformApp());
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class JobPlatformApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'İş Platformu',
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRoutes.generateRoute,
+      initialRoute: AppRoutes.home, // İlk açılacak sayfa
     );
   }
 }
